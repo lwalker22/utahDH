@@ -1,0 +1,22 @@
+.container {
+  display: inline-block;
+  width: 100%;
+}
+
+.left_items {
+  display: flex;
+  align-items: center;
+  float: left;
+  padding-left: 1em;
+}
+
+.right_items {
+  display: flex;
+  align-items: center;
+  float: right;
+  padding-right: 1em;
+}
+
+.spacing{
+  padding-right: 1.25em;
+}
