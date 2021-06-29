@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "venues",
   "info": {
-    "name": "venue"
+    "name": "venue",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -39,6 +40,14 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "location_url": {
+      "type": "string",
+      "required": true
+    },
+    "registration_url": {
+      "type": "string",
+      "required": true
     }
   }
 }
