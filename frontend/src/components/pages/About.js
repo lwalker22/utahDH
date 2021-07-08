@@ -21,8 +21,6 @@ export default function About() {
       })
   }, [] );
 
-  console.log(imgs)
-
   if (imgs[0] === undefined) {
     return (
       <div>
@@ -37,14 +35,15 @@ export default function About() {
         <ReactMarkdown children={desc}/>
       </div>
       <div className={styles.img_container}>
-        <img src={apiDev + imgs[0].url} alt={imgs[0].title} className={styles.img}/>
-        <img src={apiDev + imgs[1].url} alt={imgs[1].title} className={styles.img}/>
+        { 
+          Object.keys(imgs).map((item, i) => (
+            <>
+              <img key={i} src={apiDev + imgs[item].url} alt={imgs[item].title} className={styles.img}/>
+            </>
+          ))
+        } 
       </div>
-      {/* <div>
-        {imgs.map((i) => (
-          <img src={apiDev + imgs[i].url} alt={imgs[i].name} />  
-        ))}
-      </div> */}
+
     </>
   )
 }
