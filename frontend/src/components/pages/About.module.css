@@ -2,20 +2,21 @@
   width: 85%;
   margin: auto;
   line-height: 2em;
-  font-size: 1em;
+  font-size: 1.15em;
 }
 
 .img_container {
-  display: block;
+  display: flex; 
+  flex-direction: row;
   text-align: center;
-  padding-left: .25em;
-  padding-right: .25em;
+  padding-left: 1em;
+  padding-right: 1em;
   padding-bottom: 0em;
   margin-bottom: 4em;
 }
 
 .img {
-  width: 42.5%;
+  width: 95%;
   height: auto;
   margin: auto;
   padding: .5em;

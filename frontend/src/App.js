@@ -4,6 +4,8 @@ import Footer from './components/shared/Footer'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 
+import './App.module.css';
+
 export default function App() {
   return (
     <Router>

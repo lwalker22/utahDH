@@ -11,7 +11,7 @@ export default function About() {
   const [imgs, setImgs] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:1337/about')
+    axios.get(apiDev + '/about')
       .then(res => {
         setDesc(res.data.description);
         setImgs(res.data.images);
@@ -19,7 +19,7 @@ export default function About() {
       .catch(err => {
         console.log(err);
       })
-  }, [] );
+  }, [apiDev] );
 
   if (imgs[0] === undefined) {
     return (
@@ -37,13 +37,12 @@ export default function About() {
       <div className={styles.img_container}>
         { 
           Object.keys(imgs).map((item, i) => (
-            <>
-              <img key={i} src={apiDev + imgs[item].url} alt={imgs[item].title} className={styles.img}/>
-            </>
+            <div key={i}>
+              <img src={apiDev + imgs[item].url} alt={imgs[item].title} className={styles.img}/>
+            </div>
           ))
         } 
       </div>
-
     </>
   )
 }
