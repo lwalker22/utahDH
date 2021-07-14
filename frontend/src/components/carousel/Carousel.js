@@ -5,6 +5,7 @@ export default function Carousel() {
   
   const apiDev = `http://localhost:1337`;
   const [imgs, setImgs] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     axios.get(apiDev + '/home')
@@ -16,6 +17,23 @@ export default function Carousel() {
       })
   }, [apiDev] );
 
+  const dec = () => {
+    if(index <= 0) {
+      return;
+    } else {
+      setIndex(index - 1);
+    }
+  }
+
+  const inc = () => {
+    if (index < imgs.length -1) {
+      setIndex(index + 1);
+    } else if ( index === imgs.length - 1) {
+      setIndex(0)
+      console.log("condition met")
+    }
+  }
+  
   if (imgs[0] === undefined) {
     return (
       <div>
@@ -27,13 +45,19 @@ export default function Carousel() {
   return(
     <>
       <div>
-        { 
-          Object.keys(imgs).map((item, i) => (
-            <>
-              <img key={i} src={apiDev + imgs[item].url} alt={imgs[item].title}/>
-            </>
-          ))
-        } 
+      {
+        index === 0
+          ? 
+            <> </>
+          : 
+            <button onClick={dec}>
+              previous
+            </button>
+      }
+        <img src={apiDev + imgs[index].url} alt={imgs[index].title}/>
+        <button onClick={inc}>
+          next
+        </button>
       </div>
     </>
   )
