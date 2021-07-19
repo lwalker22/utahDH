@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.button {
+  border: 0;
+  background: black;
+  box-shadow: none;
+  border-radius: 0px;
+  color: black;
+}
+
+.button_start {
+  border: 0;
+  background: black;
+  box-shadow: none;
+  border-radius: 0px;
+  color: white;
+}
+
+.img_size {
+  height: 35em;
+  width: auto;
+}

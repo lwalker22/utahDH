@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import arrow_right from '../assets/icons/arrow-right-circle-white.svg';
+import arrow_left from '../assets/icons/arrow-left-circle-white.svg';
+import arrow_left_white from '../assets/icons/arrow-left-circle-black.svg';
+
+
+
+import styles from './Carousel.module.css';
+
 export default function Carousel() {
   
   const apiDev = `http://localhost:1337`;
@@ -18,10 +26,10 @@ export default function Carousel() {
   }, [apiDev] );
 
   const dec = () => {
-    if(index <= 0) {
+    if (index === 0) {
       return;
     } else {
-      setIndex(index - 1);
+      setIndex(index -1);
     }
   }
 
@@ -30,7 +38,6 @@ export default function Carousel() {
       setIndex(index + 1);
     } else if ( index === imgs.length - 1) {
       setIndex(0)
-      console.log("condition met")
     }
   }
   
@@ -43,22 +50,26 @@ export default function Carousel() {
   }
 
   return(
-    <>
-      <div>
-      {
-        index === 0
-          ? 
-            <> </>
-          : 
-            <button onClick={dec}>
-              previous
-            </button>
-      }
-        <img src={apiDev + imgs[index].url} alt={imgs[index].title}/>
-        <button onClick={inc}>
-          next
+    <section className={styles.background}>
+      <div className={styles.container}>
+        {
+          index === 0
+            ? <button className ={styles.button_start}>
+                <img src={arrow_left_white} alt='white left arrow'/>
+              </button>
+            : <button className ={styles.button} onClick={dec} >
+                <img src={arrow_left} alt='left arrow'/>
+              </button>
+        }
+        <img 
+          className={styles.img_size}
+          src={apiDev + imgs[index].url} 
+          alt={imgs[index].title}
+        />
+        <button className ={styles.button} onClick={inc}>
+          <img src={arrow_right} alt='right arrow'/>
         </button>
       </div>
-    </>
+    </section>
   )
 }

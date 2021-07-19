@@ -1,7 +1,11 @@
 import Carousel from "../carousel/Carousel"
+import styles from './Home.module.css';
+
 
 export default function Home() {
   return(
-    <Carousel/>
+    <div className ={styles.size}>
+      <Carousel/>
+    </div>
   )
 }
