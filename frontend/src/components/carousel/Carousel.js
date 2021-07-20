@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import arrow_right from '../assets/icons/arrow-right-circle-white.svg';
-import arrow_left from '../assets/icons/arrow-left-circle-white.svg';
-import arrow_left_white from '../assets/icons/arrow-left-circle-black.svg';
+import arrow_right from '../assets/icons/arrow-right-circle.svg';
+import arrow_left from '../assets/icons/arrow-left-circle.svg';
+import arrow_left_white from '../assets/icons/arrow-left-circle-white.svg';
 
 
 
@@ -50,7 +50,6 @@ export default function Carousel() {
   }
 
   return(
-    <section className={styles.background}>
       <div className={styles.container}>
         {
           index === 0
@@ -70,6 +69,5 @@ export default function Carousel() {
           <img src={arrow_right} alt='right arrow'/>
         </button>
       </div>
-    </section>
   )
 }
