@@ -5,8 +5,6 @@ import arrow_right from '../assets/icons/arrow-right-circle.svg';
 import arrow_left from '../assets/icons/arrow-left-circle.svg';
 import arrow_left_white from '../assets/icons/arrow-left-circle-white.svg';
 
-
-
 import styles from './Carousel.module.css';
 
 export default function Carousel() {
@@ -65,7 +63,7 @@ export default function Carousel() {
           src={apiDev + imgs[index].url} 
           alt={imgs[index].title}
         />
-        <button className ={styles.button} onClick={inc}>
+        <button className={styles.button} onClick={inc} >
           <img src={arrow_right} alt='right arrow'/>
         </button>
       </div>

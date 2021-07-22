@@ -21,6 +21,16 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "sponsors": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }
