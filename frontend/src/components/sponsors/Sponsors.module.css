@@ -1,5 +1,5 @@
 .svg_size {
-  padding: 1em;
+  padding: 2em;
   width: 7em;
   height: auto;
 }
@@ -14,4 +14,16 @@
 .header {
   text-align: center;
   padding-bottom: 1.5em;
+}
+
+@media (max-width: 414px) {
+  .svg_size {
+    padding: 1em;
+    width: 5em;
+    height: auto;
+  }
+  .header {
+    text-align: center;
+    padding-bottom: .5em;
+  }
 }

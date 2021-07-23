@@ -1,3 +1,9 @@
 .side_by_side {
   display: flex; 
 }
+
+@media (max-width: 414px) {
+  .side_by_side {
+    display: inline;
+  }
+}
